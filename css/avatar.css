@@ -1,0 +1,113 @@
+ 
+body{
+	background: url("./../images/BG2.jpg") fixed no-repeat;
+}
+
+
+p{
+	font-size: 150%;
+  font-family:serif;
+
+}
+
+
+
+h1{
+font-size: 40px;
+
+}
+
+h2{
+  font-size: 30px;
+}
+
+
+
+
+#div-avatar {
+  display: inline-block;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 3px 3px 50px 25px rgba(142,67,44,0.75);
+-webkit-box-shadow: 3px 3px 50px 25px rgba(142,67,44,0.75);
+-moz-box-shadow: 3px 3px 50px 25px rgba(142,67,44,0.75);
+}
+
+
+
+#img1 {
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+}
+
+/*aspect-ratio pour intgrer l'image dans le div*/ 
+
+#img1  {
+  object-fit: cover;
+  object-position: right center;
+}
+
+
+#div-avatar:hover {
+    width: 200px;
+    height: 200px;
+    transform: rotate(360deg);
+    transition-duration: 4s;
+  
+
+
+}
+
+
+#tx{
+	position: relative;
+	bottom : 80px;
+	float: right;
+
+
+}
+
+section{
+  background-color: white;
+  box-shadow: 3px 3px 50px 25px rgba(142,67,44,0.75);
+-webkit-box-shadow: 3px 3px 50px 25px rgba(142,67,44,0.75);
+-moz-box-shadow: 3px 3px 50px 25px rgba(142,67,44,0.75);
+
+ padding-top: 1%;
+    padding-right: 2%;
+    padding-bottom: 1%;
+    padding-left: 2%;
+
+border-radius: 20px 20px 20px 20px;
+  
+
+
+}
+
+
+.container{
+width: 80%;
+margin-right: 10%; 
+margin-left:10% ;   
+
+
+}
+
+#img-auteur{
+
+width: 10%;
+height:10%;
+border-radius: 20px 20px 20px 20px;
+
+}
+
+#img-auteur:hover{
+
+width: 16%;
+height:16%;
+
+
+}

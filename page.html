@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Formulaire</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
+<body style="background: url(images/BG2.jpg) fixed no-repeat;">
+
+	
+<br>
+	<div class="container" style="border: 0px solid;padding: 50px 60px;-webkit-box-shadow: 1px 4px 26px 11px rgba(0,0,0,0.75);
+-moz-box-shadow: 1px 4px 26px 11px rgba(0,0,0,0.75);
+box-shadow: 1px 4px 26px 11px rgba(0,0,0,0.75);background-color: #ffede5; background-color: white;border-radius: 3%;">
+
+<form >
+
+	<label for="prenom" class="col-sm-3 control-label">Prénom</label> 
+      <div class="col-sm-9">
+        <input type="text" id="prenom" placeholder="Prénom" class="form-control" autofocus>
+      </div>
+
+      <br>
+
+      <label for="nom" class="col-sm-3 control-label">Nom</label> 
+      <div class="col-sm-9">
+        <input type="text" id="nom" placeholder="Nom" class="form-control">
+      </div>
+
+
+      <br>
+
+      
+
+      <label for="email" class="col-sm-3 control-label">Email</label> 
+      <div class="col-sm-9">
+        <input type="email" id="email" placeholder="Email" class="form-control">
+      </div>
+
+
+      <br>
+
+      <label for="message" class="col-sm-3 control-label">Entrez votre message ci-dessus</label> 
+      <div class="col-sm-9">
+        <textarea  id="message" placeholder="Message" class="form-control"></textarea>
+      </div>
+
+      <br>
+
+        <label class="control-label col-sm-3">Genre</label>
+                    <div class="col-sm-6">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label class="radio-inline">
+                                    <input type="radio" name="sexe" id="Radio" value="Femme">Femme
+                                </label>
+                            </div>
+                            <div class="col-sm-4">
+                                <label class="radio-inline">
+                                    <input type="radio" name="sexe" id="Radio1" value="Homme" checked="">Homme
+                                </label>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                    <label for="pays" class="control-label col-sm-3">Dans quel pays habitez-vous ?</label>
+                     <br>     
+                       <select name="pays" id="pays" class="form-control col-sm-4" onchange="sel()">     
+                       	 <option value=none disabled selected >Séléctionner votre pays</option>
+                         <option value="Senegal">Sénégal</option>
+                         <option value="Guinée">Guinée</option>   
+                         <option value="Gabon">Gabon</option>
+                         <option value="Côte d'Ivoire">Côte d'Ivoire</option>
+                         <option value="france">France</option>  
+                         <option value="espagne">Espagne</option>
+                         <option value="italie">Italie</option> 
+                         <option value="royaume-uni">Royaume-Uni</option> 
+                         <option value="canada">Canada</option>  
+                         <option value="etats-unis">Etats-Unis</option>  
+                         <option value="chine">Chine</option>
+                         <option value="japon">Japon</option>    
+                       </select> 
+                      <br>
+           <div>
+            <label for="pays" class="control-label">Quels fruits aimez vous ?</label>
+            <br>
+            <INPUT type="checkbox" name="fruit" value="Fraise"> Fraise <br>
+            <INPUT type="checkbox" name="fruit" value="Banane"> Banane <br>
+            <INPUT type="checkbox" name="fruit" value="Pomme"> Pomme <br>
+            <INPUT type="checkbox" name="fruit" value="Raisin"> Raisin <br>
+        </div>
+
+      <br><br>
+
+	<input type="submit" class="btn btn-primary" name="envoyer" onclick="bb()" >
+	<input type="reset" class="btn btn-primary-2" name="reset">
+</form>
+</div>
+<br>
+
+<script type="text/javascript">
+
+  var b = document.getElementById('nom');
+	var c = document.getElementById('prenom');
+	var d = document.getElementById('email');
+	var f = document.getElementById('message');
+	var h = document.getElementById('Radio');
+	var i = document.getElementById('Radio1');
+	var e = 'Les informations entrées\n\n';
+	var g = 'remplir les cases suivants :\n\n';
+  var fr = 'vos fruits préférés :\n';
+
+	
+	function sel()
+ 	{
+
+ var select = document.getElementById("pays");
+ var choice = select.selectedIndex;
+ var valeur = select.options[choice].value;
+ var texte = select.options[choice].text;
+ if (choice==0) {return 0}
+  else{
+ return(texte);}
+ 	}
+
+
+	
+
+
+	function bb()
+	{
+		
+			if (c.value=="") {g+="-le Prenom\n";c.style.border='1px solid red !important';}
+			else {e+="Prenom : "+c.value+"\n";}
+
+			if (b.value=="") {g+="-le Nom\n";}
+			else {e+="Nom : "+b.value+"\n";}
+
+			if (d.value=="") {(g+="-le Email\n");}
+			else {e+="Email : "+d.value+"\n";}
+
+			if (f.value=="") {g+="-le Message\n";}
+			else {e+="Message :  "+f.value+"\n";}
+
+		  if (h.checked==false && i.checked==true) {e+="Genre : "+i.value+"\n";}
+		  else {e+="Genre : "+h.value+"\n";}
+					
+		  if (sel()==0) {g+="-choisir le pays\n";}
+      else {e+="Pays:    "+sel()+"\n";}
+
+     if ( document.getElementsByName("fruit")[0].checked==1)
+        {fr+=document.getElementsByName("fruit")[0].value+"\n";}
+
+     if ( document.getElementsByName("fruit")[1].checked==1)
+         {fr+=document.getElementsByName("fruit")[1].value+"\n";}
+
+     if ( document.getElementsByName("fruit")[2].checked==1)
+        {fr+=document.getElementsByName("fruit")[2].value+"\n";}
+
+     if ( document.getElementsByName("fruit")[3].checked==1)
+        {fr+=document.getElementsByName("fruit")[3].value+"\n";}
+
+      if (document.getElementsByName("fruit")[0].checked==false&&document.getElementsByName("fruit")[1].checked==false&&document.getElementsByName("fruit")[2].checked==false&&document.getElementsByName("fruit")[3].checked==false)
+      {
+        g+="-Cocher un fruit au minimum \n";
+
+      }
+      else{
+        e+=fr+"\n";
+        fr="";
+      }
+
+    	if (b.value==""||c.value==""||d.value==""||f.value==""||sel()==0||(document.getElementsByName("fruit")[0].checked==false&&document.getElementsByName("fruit")[1].checked==false&&document.getElementsByName("fruit")[2].checked==false&&document.getElementsByName("fruit")[3].checked==false))
+					{
+					alert(g);return false;
+					g="";
+          e="";
+				}
+				else{
+					alert(e);
+          e="";
+					}
+				}
+		
+	
+</script>
+
+</body>
+</html>
